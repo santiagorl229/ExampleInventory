@@ -20,5 +20,4 @@ export class CreateProductDto{
     @IsArray()  
     @IsNotEmpty()
     section: Array<Sections>;
-    
 }

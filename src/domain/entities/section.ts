@@ -1,6 +1,7 @@
 import {IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl} from 'class-validator';
+import { Products } from './product';
 import { Warehouse } from './warehouse';
-export class Sections{
+export class Section{
     readonly _id?: string;
 
     @IsString()
@@ -21,6 +22,6 @@ export class Sections{
 
     @IsArray()  
     @IsNotEmpty()
-    warehouse: Array<Warehouse>;
+    products: Array<Products>;
 
 }

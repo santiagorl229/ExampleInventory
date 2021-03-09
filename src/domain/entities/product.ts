@@ -10,17 +10,21 @@ export class Products{
 
     @IsString()
     @IsNotEmpty()
-    count: string;
+    count: number;
     
     @IsString()
     @IsNotEmpty()
     serial: string;
 
+    @IsNumber()
     @IsNotEmpty()
     purchasePrice: number;
 
-    @IsArray()  
     @IsNotEmpty()
-    section: Array<Sections>;
+    category: string;
+    @IsNotEmpty()
+    subcategory: string;
+
+   
  
 }
