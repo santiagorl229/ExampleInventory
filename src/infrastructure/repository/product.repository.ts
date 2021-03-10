@@ -6,6 +6,7 @@ import { mongooseProductsModel, ProductModel } from "../models/product.model";
 
 @Injectable()
 export class ProductRepository{
+
     constructor(@Inject(PRODUCT_MODEL_PROVIDER) private readonly model: ProductModel) {}
 
     async createProduct(product: CreateProductDto): Promise<Product>{
@@ -29,7 +30,11 @@ export class ProductRepository{
           }
 
         return await finalProduct;
-
-     
+        
+    }
+    async ObtainProduct(): Promise<ProductModel[]>{
+        const products = await mongooseProductsModel.find().exec();         
+        return products as ProductModel[]; 
+        
     }
 }

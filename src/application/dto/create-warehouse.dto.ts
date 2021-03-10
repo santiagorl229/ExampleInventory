@@ -11,5 +11,5 @@ export class CreateWarehouseDto{
 
     @IsArray()
     @IsNotEmpty()
-    sections: Array<Section>
+    section: Array<Section>
 }

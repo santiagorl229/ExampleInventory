@@ -1,13 +1,13 @@
-/* import { Injectable, Inject } from '@nestjs/common';
-import { CreateProductDto } from 'src/application/dto/create-product.dto';
-import { Products } from '../entities/product';
+import { CreateWarehouseDto } from '@application/dto/create-warehouse.dto';
+import { WarehouseRepository } from '@infrastructure/repository/warehouse.repository';
+import { Injectable, Inject } from '@nestjs/common';
 import { Warehouse } from '../entities/warehouse';
 @Injectable()
 export class WareHouseService {
-    constructor(private readonly WareHouseRepository: WareHouseRepository){
+    constructor(private readonly wareHouseRepository: WarehouseRepository){
 
     }
-    async createWarehouse(createWarehouseDto: CreateWareHouseDto): Promise<Warehouse>{
-        return await this.productRepository.createProduct();
+    async createWarehouse(createWarehouseDto: CreateWarehouseDto): Promise<Warehouse>{
+        return await this.wareHouseRepository.createWarehouse(createWarehouseDto);
     }
-} */
+}

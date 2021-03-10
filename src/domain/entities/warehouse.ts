@@ -14,6 +14,6 @@ export class Warehouse{
 
     @IsArray()
     @IsNotEmpty()
-    sections: Array<Section>
+    section: Array<Section>
 
 }

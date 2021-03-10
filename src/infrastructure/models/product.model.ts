@@ -3,6 +3,9 @@ import * as faker from 'faker';
 import { model, Schema, Document } from "mongoose";
 
 export class ProductModel {
+    find() {
+        throw new Error("Method not implemented.");
+    }
     _id?: string;
     name: string;
     count: number;

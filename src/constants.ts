@@ -9,5 +9,6 @@ export const DATABASE_SERVICE = process.env.DATABASE_SERVICE || 'DATABASE_SERVIC
 export const APP_PORT = process.env.PORT || 4001;
 export const APP_HOST = process.env.APP_HOST || '0.0.0.0';
 export const MONGO_HOSTNAME = 'mongodb://localhost:27017/persistence_inventory'
+export const WAREHOUSE_MODEL_PROVIDER = 'WarehouseModelProvider';
 
 
