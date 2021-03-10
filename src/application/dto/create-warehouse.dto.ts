@@ -1,4 +1,5 @@
-import {IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl} from 'class-validator';
+import {IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl} from 'class-validator';
+import { Section } from 'src/domain/entities/section';
 export class CreateWarehouseDto{
     @IsString()
     @IsNotEmpty()
@@ -7,4 +8,8 @@ export class CreateWarehouseDto{
     @IsString()
     @IsNotEmpty()
     note: string;
+
+    @IsArray()
+    @IsNotEmpty()
+    sections: Array<Section>
 }

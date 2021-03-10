@@ -1,7 +1,6 @@
 import {IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString} from 'class-validator';
 import { Transform } from 'node:stream';
-import { Sections } from './section';
-export class Products{
+export class Product{
     readonly _id?: string;
     
     @IsString()

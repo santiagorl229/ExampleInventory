@@ -1,8 +1,8 @@
-import { UserModel } from './user.model';
-import { USER_MODEL_PROVIDER, DB_PROVIDER } from '@constants';
+import { ProductModel } from './product.model';
+import { PRODUCT_MODEL_PROVIDER, DB_PROVIDER } from '@constants';
 
 export const modelProviders = [{
-  provide: USER_MODEL_PROVIDER,
-  useValue: UserModel,
+  provide: PRODUCT_MODEL_PROVIDER,
+  useValue: ProductModel,
   inject: [DB_PROVIDER],
 }];

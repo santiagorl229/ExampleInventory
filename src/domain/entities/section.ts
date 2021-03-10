@@ -1,5 +1,5 @@
 import {IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl} from 'class-validator';
-import { Products } from './product';
+import { Product } from './product';
 import { Warehouse } from './warehouse';
 export class Section{
     readonly _id?: string;
@@ -22,6 +22,6 @@ export class Section{
 
     @IsArray()  
     @IsNotEmpty()
-    products: Array<Products>;
+    products: Array<Product>;
 
 }

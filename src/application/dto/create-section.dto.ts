@@ -1,7 +1,8 @@
 import {IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl} from 'class-validator'
+import { Product } from 'src/domain/entities/product';
 import { Warehouse } from 'src/domain/entities/warehouse';
 export class CreateSectionDto{
-    
+
     @IsString()
     @IsNotEmpty()
     name: string;
@@ -20,5 +21,5 @@ export class CreateSectionDto{
 
     @IsArray()  
     @IsNotEmpty()
-    warehouse: Array<Warehouse>;
+    products: Array<Product>;
 }
