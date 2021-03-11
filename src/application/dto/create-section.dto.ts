@@ -21,5 +21,5 @@ export class CreateSectionDto{
 
     @IsArray()  
     @IsNotEmpty()
-    products: Array<Product>;
+    product: Array<Product>;
 }

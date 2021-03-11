@@ -16,7 +16,4 @@ export class WarehouseController {
     console.log(createWarehouseDto);
     return this.warehouseService.createWarehouse(createWarehouseDto);
   }
-
-
-
 }

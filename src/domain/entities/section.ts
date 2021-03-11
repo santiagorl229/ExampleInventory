@@ -22,6 +22,6 @@ export class Section{
 
     @IsArray()  
     @IsNotEmpty()
-    products: Array<Product>;
+    product: Array<Product>;
 
 }
