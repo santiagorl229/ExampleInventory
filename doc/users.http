@@ -3,7 +3,34 @@
 @host = {{hostname}}:{{port}}
 @contentType = application/json
 
-### Create User
+
+### Todos los Productos, Todas Secciones, Todas las bodegas
+GET http://{{host}}/product/GetProducts HTTP/1.1{}
+
+### Todas Secciones
+GET http://{{host}}/section/GetSections HTTP/1.1{}
+
+### Todos Warehouse
+GET http://{{host}}/warehouse/GetWarehouse HTTP/1.1
+
+### Create Section
+POST http://{{host}}/section/createSection HTTP/1.1
+Content-Type: {{contentType}}
+{
+    "name": "section 1",
+    "location": "superior",
+    "tag": "estante",
+    "note": "se tiene una distancia de 1m * 24 cm",
+    "product": [{
+        "name": "pantalla acer",
+        "count": 2,
+        "serial": "asd12asd32as1d",
+        "purchasePrice": 150000,
+        "category": "pantallas",
+        "subcategory": "acer"
+    }]
+}
+### Create Product
 POST http://{{host}}/product/createProduct HTTP/1.1
 Content-Type: {{contentType}}
 
@@ -34,23 +61,7 @@ Content-Type: {{contentType}}
 }
 
 ### Create User contactme
-POST http://{{host}}/section/createSection HTTP/1.1
-Content-Type: {{contentType}}
 
-{
-    "name": "section 1",
-    "location": "superior",
-    "tag": "estante",
-    "note": "se tiene una distancia de 1m * 24 cm",
-    "product": [{
-        "name": 'pantalla acer',
-        "count": 2,
-        "serial": 'asd12asd32as1d',
-        "purchasePrice": 150000,
-        'category': 'pantallas',
-        'subcategory': 'acer'
-    }]
-}
 
 ### Create User
 ### Create User contactme

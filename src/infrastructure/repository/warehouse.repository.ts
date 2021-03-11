@@ -32,4 +32,8 @@ export class WarehouseRepository{
 
         return await finalWarehouse;
     }
+    async ObtainAllWarehouse(): Promise<WarehouseModel[]>{
+        const resultSection = await mongooseWarehouseModel.find().exec();  
+        return resultSection;
+    }
 }

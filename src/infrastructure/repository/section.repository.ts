@@ -35,4 +35,8 @@ export class SectionRepository{
         return await finalSection;
 
     }
+    async ObtainSection(): Promise<SectionModel[]>{
+        const sections = await mongooseSectionModel.find().exec();         
+        return sections as SectionModel[];         
+    }
 }

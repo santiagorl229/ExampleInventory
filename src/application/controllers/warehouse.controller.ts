@@ -6,6 +6,7 @@ import { ProductModel } from '@infrastructure/models/product.model';
 import { WareHouseService } from '@domain/services/warehouse.service';
 import { CreateWarehouseDto } from '@application/dto/create-warehouse.dto';
 import { Warehouse } from '@domain/entities/warehouse';
+import { WarehouseModel } from '@infrastructure/models/warehouse.model';
 
 // UserController
 @Controller('warehouse')
@@ -15,5 +16,9 @@ export class WarehouseController {
   CreateProduct(@Body() createWarehouseDto: CreateWarehouseDto): Promise<Warehouse>{
     console.log(createWarehouseDto);
     return this.warehouseService.createWarehouse(createWarehouseDto);
+  }
+  @Get('/GetWarehouse')
+  async ObtainAllWarehouse(): Promise<WarehouseModel[]>{
+    return this.warehouseService.ObtainAllWarehouse();
   }
 }
