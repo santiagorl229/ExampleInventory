@@ -29,7 +29,6 @@ export class WarehouseRepository{
             console.log(error.message);
         }
 
-
         return await finalWarehouse;
     }
     async ObtainAllWarehouse(): Promise<WarehouseModel[]>{
