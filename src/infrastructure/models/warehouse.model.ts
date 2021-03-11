@@ -8,14 +8,14 @@ export class WarehouseModel {
     _id?: string;
     name: string;
     note: string;
-    section: Array<Section>
+    sections: Array<Section>
 
 
   constructor(warehouse: CreateWarehouseDto) {
     this._id = faker.random.uuid();
     this.name = warehouse.name;
     this.note = warehouse.note;
-    this.section = warehouse.section
+    this.sections = warehouse.section
   }
   save(): WarehouseModel{
     return this;
@@ -27,7 +27,7 @@ var schema = new Schema({
   _id: { required: true, type: String},
   name: { required: true, type: String },
   note: { required: true, unique : true, dropDups: true,  type: String  },
-  section: { required: true, type: []}
+  sections: { type: []}
 })
 
 // register each method at schema

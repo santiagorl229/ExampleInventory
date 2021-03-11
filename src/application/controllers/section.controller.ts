@@ -1,24 +1,32 @@
-import { Controller, Post, Body, Req, Get} from '@nestjs/common';
-import { SectionService } from 'src/domain/services/section.service';
+import { Controller, Post, Body, Req, Get, Put, ParseUUIDPipe, Param, Patch} from '@nestjs/common';
 import { CreateSectionDto } from '@application/dto/create-section.dto';
 import { Section } from '@domain/entities/section';
 import { SectionModel } from '@infrastructure/models/section.model';
+import { WareHouseService } from '@domain/services/warehouse.service';
 
 // UserController
 @Controller('section')
 export class SectionController {
-  constructor(private readonly sectionService: SectionService) {}
+  constructor(private readonly warehouseServices: WareHouseService) {}
   
-  @Post('/createSection')
-  CreateSection(@Body() createSectionDto: CreateSectionDto): Promise<Section>{
-    return this.sectionService.createSection(createSectionDto);
+  @Patch('/create/:id')
+  CreateSection(@Param('id', ParseUUIDPipe) id: string, @Body() createSectionDto: CreateSectionDto): Promise<Section>{
+    return this.warehouseServices.createSection(id,createSectionDto);
   }
 
   @Get('/GetSections')
-  async ObtainSections(): Promise<SectionModel[]> {
-    return this.sectionService.ObtainSections();
+  async getSections(): Promise<Section[]> {
+    return this.warehouseServices.getSections();
+  }
+  
+  @Put('/changeProductForSection')
+  async ChangeProductForSection(@Body() json:any): Promise<Section>{
+    return this.warehouseServices.ChangeProductForSection(json);
   }
 
 
+}
 
+function Putch(arg0: string) {
+  throw new Error('Function not implemented.');
 }

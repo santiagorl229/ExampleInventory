@@ -2,6 +2,7 @@ import { CreateSectionDto } from "src/application/dto/create-section.dto";
 import * as faker from 'faker';
 import { model, Schema, Document } from "mongoose";
 import { Product } from "@domain/entities/product";
+import { mongooseProductsModel } from "./product.model";
 
 export class SectionModel {
     find() {
@@ -36,16 +37,7 @@ var schema = new Schema({
   location: { required: true, unique : true, dropDups: true,  type: String  },
   tag: { required: true, unique : true, dropDups: true, type: String },
   note : { required: true, unique : true, dropDups: true, type: String },
-  product : { required: true, unique : true, dropDups: true, type: String },
+  product : { type: Array },
   
 })
-
-// register each method at schema
-schema.method('foo', SectionModel.prototype.save)
-
-// 2) Document
-export type SectionDocument  = SectionModel & Document;
-
-// 3) MODEL
-export const mongooseSectionModel = model<SectionDocument>('Section', schema);
 

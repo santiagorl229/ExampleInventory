@@ -9,11 +9,10 @@ export class ProductService {
 
     }
     async createProduct(createProductDto: CreateProductDto): Promise<Product>{
-        console.log(createProductDto);
         return await this.productRepository.createProduct(createProductDto);
     }
 
-    async ObtainProduct(): Promise<ProductModel[]>{
-        return await this.productRepository.ObtainProduct()
+    async getProducts(): Promise<ProductModel[]>{
+        return await this.productRepository.getProducts()
     }
 }

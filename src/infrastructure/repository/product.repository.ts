@@ -32,7 +32,7 @@ export class ProductRepository{
         return await finalProduct;
         
     }
-    async ObtainProduct(): Promise<ProductModel[]>{
+    async getProducts(): Promise<ProductModel[]>{
         const products = await mongooseProductsModel.find().exec();         
         return products as ProductModel[]; 
         
