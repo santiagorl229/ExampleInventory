@@ -13,7 +13,6 @@ export class Warehouse{
     note: string;
 
     @IsArray()
-    @IsNotEmpty()
     sections: Array<Section>
 
 }

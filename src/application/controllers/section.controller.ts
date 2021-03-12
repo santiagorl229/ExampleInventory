@@ -9,7 +9,7 @@ import { WareHouseService } from '@domain/services/warehouse.service';
 export class SectionController {
   constructor(private readonly warehouseServices: WareHouseService) {}
   
-  @Patch('/create/:id')
+/*   @Patch('/create/:id')
   CreateSection(@Param('id', ParseUUIDPipe) id: string, @Body() createSectionDto: CreateSectionDto): Promise<Section>{
     return this.warehouseServices.createSection(id,createSectionDto);
   }
@@ -17,12 +17,12 @@ export class SectionController {
   @Get('/GetSections')
   async getSections(): Promise<Section[]> {
     return this.warehouseServices.getSections();
-  }
+  } */
   
-  @Put('/changeProductForSection')
+/*   @Put('/changeProductForSection')
   async ChangeProductForSection(@Body() json:any): Promise<Section>{
     return this.warehouseServices.ChangeProductForSection(json);
-  }
+  } */
 
 
 }

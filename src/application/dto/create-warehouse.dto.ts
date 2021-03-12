@@ -10,6 +10,5 @@ export class CreateWarehouseDto{
     note: string;
 
     @IsArray()
-    @IsNotEmpty()
     section: Array<Section>
 }

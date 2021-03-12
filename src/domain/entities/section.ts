@@ -21,7 +21,6 @@ export class Section{
     note: string;
 
     @IsArray()  
-    @IsNotEmpty()
     product: Array<Product>;
 
 }

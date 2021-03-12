@@ -47,11 +47,19 @@ Content-Type: {{contentType}}
     "category": "pantallas",
     "subcategory": "lenovo"
 }
-### Actualizar producto por section
-POST http://{{host}}/section/changeProductForSection HTTP/1.1
+### cREATE Warehouse
+POST http://{{host}}/warehouse/createWarehouse HTTP/1.1
+Content-Type: {{contentType}}
 
 {
-    
+    "name": "dasdasdasd",
+    "note": "3dsfsafadf",
+    "sections": [{
+        "name": "seccion 1",
+        "location": "superior",
+        "tag": "estante",
+        "note": "se tiene una distancia de 1m * 24 cm"}],
+        "products": []
 }
 
 
